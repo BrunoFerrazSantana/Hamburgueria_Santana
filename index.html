@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!--Link com o Toastify para mensagens de alerta-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!--Link com o TailWind-->
+    <link rel="stylesheet" href="./styles/output.css" />
+    <!--Título da página-->
+    <title>Hamburgueria Santana</title>
+</head>
+
+<body>
+    <!--INÍCIO CABEÇALHO-->
+    <header class="w-full h-[450px] bg-zinc-900 bg-home bg-cover bg-center">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <!--INÍCIO LOGO EMPRESA-->
+            <img src="./assets/logo_hamburgueria_santana.png" alt="Logo Hamburgueria Santana"
+                class="w-40 h-40 rounded-full shadow-lg hover:scale-110 duration-1000" />
+            <!--NOME DA EMPRESA-->
+            <h1 class="text-2xl sm:text-4xl mt-4 mb-1 font-bold text-white">HAMBURGUERIA SANTANA</h1>
+            <!--INÍCIO DA INFORMAÇÃO SOBRE O HORÁRIO DE FUNCIONAMENTO-->
+            <span class="text-white text-sm mb-3">Segunda a Sábado - 19:00 às 23:00</span>
+            <!--STATUS SE ESTÁ ABERTO OU FECHADA NO MOMENTO-->
+            <div class="text-white">
+                <span class="bg-red-500 px-4 py-1 rounded-lg" id="date-span">Fechado</span>
+            </div>
+        </div>
+    </header>
+    <!--FIM CABEÇALHO-->
+
+    <!--INÍCIO DO TEXTO INFORMATIVO SOBRE O CARDÁPIO DE LANCHES-->
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-9">Conheça nossos lanches</h2>
+
+    <!--INÍCIO MENU-->
+    <div id="menu">
+        <!--INÍCIO DO CARDÁPIO DE LANCHES-->
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+            <!--INÍCIO PRODUTO ITEM X-SALADA-->
+            <div class="flex gap-2">
+                <!--INÍCIO IMAGEM DO PRODUTO-->
+                <img src="./assets/lanche_xsalada.png" alt="Lanche X-Salada"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DO LANCHE-->
+                    <p class="font-bold">X-SALADA</p>
+                    <!--DESCRIÇÃO DOS LANCHES-->
+                    <p class="text-sm">Pão, hambúrguer de 150g, alface, tomate, cebola,
+                        picles, queijo prato e maionese caseira.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DO LANCHE-->
+                        <p class="font-bold text-lg">R$ 19.90</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="X-SALADA" data-price="19.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM X-SALADA-->
+
+            <!--INÍCIO PRODUTO ITEM X-BACON-->
+            <div class="flex gap-2">
+                <!--INÍCIO IMAGEM DO PRODUTO-->
+                <img src="./assets/lanche_xbacon.png" alt="Lanche X-Salada"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DO LANCHE-->
+                    <p class="font-bold">X-BACON</p>
+                    <!--DESCRIÇÃO DOS LANCHES-->
+                    <p class="text-sm">Pão, hambúrguer de 150g, alface, tomate, cebola,
+                        picles, queijo cheddar e maionese caseira.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DO LANCHE-->
+                        <p class="font-bold text-lg">R$ 24.90</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="X-BACON" data-price="24.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM X-BACON-->
+
+            <!--INÍCIO PRODUTO ITEM X-CALABRESA-->
+            <div class="flex gap-2">
+                <!--INÍCIO IMAGEM DO PRODUTO-->
+                <img src="./assets/lanche_xcalabresa.png" alt="Lanche X-Calabresa"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DO LANCHE-->
+                    <p class="font-bold">X-CALABRESA</p>
+                    <!--DESCRIÇÃO DOS LANCHES-->
+                    <p class="text-sm">Pão, hambúrguer de 150g, alface, tomate, cebola,
+                        picles, queijo muçarela e maionese caseira.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DO LANCHE-->
+                        <p class="font-bold text-lg">R$ 24.90</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="X-CALABRESA" data-price="24.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM X-CALABRESA-->
+
+            <!--INÍCIO PRODUTO ITEM HOT-DOG TRADICIONAL-->
+            <div class="flex gap-2">
+                <!--INÍCIO IMAGEM DO PRODUTO-->
+                <img src="./assets/hotdog_tradicional.png" alt="Hot-dog Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DO LANCHE-->
+                    <p class="font-bold">HOT-DOG TRADICIONAL</p>
+                    <!--DESCRIÇÃO DOS LANCHES-->
+                    <p class="text-sm">Pão, 1 Salsicha, Mostarda, Ketchup, Molho de panela, Vinagrete e Batata palha.</p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <p class="font-bold text-lg">R$ 19.90</p>
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="HOT-DOG TRADICIONAL" data-price="19.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM HOT-DOG TRADICIONAL-->
+
+            <!--INÍCIO PRODUTO ITEM HOT-DOG BACON-->
+            <div class="flex gap-2">
+                <!--INÍCIO IMAGEM DO PRODUTO-->
+                <img src="./assets/hotdog_bacon.png" alt="Hot-dog Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DO LANCHE-->
+                    <p class="font-bold">HOT-DOG BACON</p>
+                    <!--DESCRIÇÃO DOS LANCHES-->
+                    <p class="text-sm">Pão, 1 Salsicha, Bacon, Mostarda, Ketchup, Molho de panela, Vinagrete e Batata
+                        palha.
+                    </p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DO LANCHE-->
+                        <p class="font-bold text-lg">R$ 22.90</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="HOT-DOG BACON" data-price="22.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM HOT-DOG BACON-->
+
+            <!--INÍCIO PRODUTO ITEM HOT-DOG CALABRESA-->
+            <div class="flex gap-2">
+                <!--INÍCIO IMAGEM DO PRODUTO-->
+                <img src="./assets/hotdog_calabresa.png " alt="Hot-dog Tradicional"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DO LANCHE-->
+                    <p class="font-bold">HOT-DOG CALABRESA</p>
+                    <!--DESCRIÇÃO DOS LANCHES-->
+                    <p class="text-sm">Pão, 1 Salsicha, Calabresa Mostarda, Ketchup, Molho de panela, Vinagrete e Batata
+                        palha.
+                    </p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DO LANCHE-->
+                        <p class="font-bold text-lg">R$ 25.90</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="HOT-DOG CALABRESA" data-price="25.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM HOT-DOG CALABRESA-->
+        </main>
+        <!--FIM DO CARDÁPIO DE LANCHES-->
+
+        <!--INÍCIO DO TEXTO SOBRE O CARDÁPIO DE BEBIDAS-->
+        <div class="mx-auto max-w-7xl px-2 my-2">
+            <h2 class="font-bold text-3xl text-center mt-9 mb-9">Bebidas</h2>
+        </div>
+        <!--FIM DO TEXTO SOBRE O CARDÁPIO DE BEBIDAS-->
+
+        <!--INÍCIO DO CARDÁPIO DE BEBIDAS-->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+            id="menu">
+            <!--INÍCIO PRODUTO ITEM COCA COLA 350 ML-->
+            <div class="flex gap-2">
+                <!--IMAGEM DO PRODUTO-->
+                <img src="./assets/coca_cola_lata_350.png" alt="CocaCola 350ml"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DA BEBIDA-->
+                    <p class="font-bold">COCA-COLA 350ML</p>
+                    <!--DESCRIÇÃO DA BEBIDA-->
+                    <p class="text-sm"> É feito a partir de água gaseificada, açúcar, extrato de noz de cola e cafeína.
+                    </p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DA BEBIDA-->
+                        <p class="font-bold text-lg">R$ 5.90</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="COCA-COLA 350ML" data-price="5.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--FIM PRODUTO ITEM ITEM COCA COLA 350 ML-->
+
+            <!--INÍCIO PRODUTO ITEM GUARANÁ ANTARCTICA 350 ML-->
+            <div class="flex gap-2">
+                <!--IMAGEM DO PRODUTO-->
+                <img src="./assets/guarana_antarctica_lata_350.png" alt="Guaraná Antarctica 350ml"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DA BEBIDA-->
+                    <p class="font-bold">GUARANÁ ANTARCTICA 350ML</p>
+                    <!--DESCRIÇÃO DA BEBIDA-->
+                    <p class="text-sm">Sabor único e natural, feito do fruto do guaraná plantado e colhido na Amazônia.
+                    </p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DA BEBIDA-->
+                        <p class="font-bold text-lg">R$ 5.90</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="GUARANÁ ANTARCTICA 350ML" data-price="5.90">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+                <!--FIM DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+            </div>
+            <!--FIM PRODUTO ITEM ITEM GUARANÁ ANTARCTICA 350 ML-->
+
+            <!--INÍCIO PRODUTO ITEM ÁGUA 200ML-->
+            <div class="flex gap-2">
+                <!--INÍCIO IMAGEM DO PRODUTO-->
+                <img src="./assets/agua_200.png" alt="Água mineral 200ml"
+                    class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-500" />
+                <!--INÍCIO DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+                <div>
+                    <!--TÍTULO DA BEBIDA-->
+                    <p class="font-bold">ÁGUA MINERAL S/GÁS 200ML</p>
+                    <!--DESCRIÇÃO DA BEBIDA-->
+                    <p class="text-sm">A água mineral possui cálcio, magnésio,
+                        fluoreto, sódio, ferro, potássio, cloro, silício, sulfato e zinco.
+                    </p>
+                    <div class="flex items-center gap-2 justify-between mt-3">
+                        <!--VALOR DA BEBIDA-->
+                        <p class="font-bold text-lg">R$ 4.00</p>
+                        <!--BOTÃO DE ADICIONAR NO CARRINHO-->
+                        <button class="bg-gray-900 px-5 rounded add-to-cart-btn hover:scale-110 duration-500"
+                            data-name="ÁGUA MINERAL S/GÁS 200ML" data-price="4.00">
+                            <i class="fa-solid fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+                <!--FIM DESCRIÇÃO, VALOR E BOTÃO ADD DO PRODUTO-->
+            </div>
+            <!--FIM PRODUTO ITEM ITEM ÁGUA 200ML-->
+        </div>
+        <!--FIM DO CARDÁPIO DE BEBIDAS-->
+    </div>
+    <!--FIM MENU-->
+
+    <!--INÍCIO DA TELA DO CARRINHO-->
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] hidden items-center justify-center" id="cart-modal">
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+            <!--TÍTULO DO CARRINHO-->
+            <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
+
+            <div id="cart-items" class="flex justify-between mb-2 flex-col"></div>
+            <!--CAMPO DE INPUT DO ENDEREÇO-->
+            <p class="font-bold ">Endereço de entrega:</p>
+            <input type="text" placeholder="Digite seu endereço completo..." id="address"
+                class="w-full border-2 p-1 rounded my-1" />
+            <!--MENSAGEM DE ALERTA CASO NÃO SEJA INSERIDO UM ENDEREÇO-->
+            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+            <!--VALOR TOTAL DO PEDIDO-->
+            <p class="font-bold mt-4">Total: <span id="cart-total">0.00</span></p>
+
+            <div class="flex items-center justify-between mt-5 w-full">
+                <!--BOTÃO DE FECHAR TELA DO CARRINHO-->
+                <button id="close-modal-btn" class="bg-red-500 text-white px-4 py-1 rounded">Fechar</button>
+                <!--BOTÃO DE FINALIZAR PEDIDO DO CARRINHO-->
+                <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
+            </div>
+        </div>
+    </div>
+    <!--FIM DA TELA DO CARRINHO-->
+
+    <!--INÍCIO DO BOTÃO PARA ACESSAR O CARRINHO-->
+    <footer
+        class="w-full bg-red-500 hover:bg-red-800 hover:text-white duration-500 py-2 fixed bottom-0 z-40 flex items-center justify-center">
+        <!--BOTÃO PARA CLICAR E ACESSAR O CARRINHO-->
+        <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+            <!--CONTADOR DE ITEM E A DESCRIÇÃO DO BOTÃO DE ACESSO AO CARRINHO-->
+            (<span id="cart-count">0</span>)Veja meu carrinho
+            <!--ÍCONE DO CARRINHO DE COMPRAS NO BOTÃO DE ACESSAR O CARRINHO-->
+            <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+    </footer>
+    <!--FIM DO BOTÃO PARA ACESSAR O CARRINHO-->
+
+    <!--LINK COM O TOASTIFY-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!--LINK COM O JAVASCRIPT-->
+    <script src="script.js"></script>
+</body>
+
+</html>
