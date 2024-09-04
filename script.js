@@ -250,7 +250,7 @@ function checkRestaurantOpen() {
 
     const hora = data.getHours();
 
-    return hora >= 19 && hora < 23;
+    return hora >= 1 && hora < 23;
 
 }
 
